@@ -19,8 +19,18 @@ const people = [
 
 function fullName(peopleArr) {
   // return something
+  let fullNameArr = peopleArr.map((person) => {
+    if (person.name.middle) {
+      return (
+        person.name.first + " " + person.name.middle + " " + person.name.last
+      );
+    } else {
+      return person.name.first + " " + person.name.last;
+    }
+  });
+  return fullNameArr;
 }
-
+console.log(fullName(people));
 // 2. Do a console.log to verify your function.
 
 // 3. Run the test to validate: yarn test exercise-3
